@@ -1,3 +1,6 @@
+#Read The Corresponding blog post below-
+https://soumyadip1995.blogspot.com/2018/12/introduction-to-boltzmann-machinesand.html
+
 # How to Use
 
 First, initialize an RBM with the desired number of visible and hidden units.
