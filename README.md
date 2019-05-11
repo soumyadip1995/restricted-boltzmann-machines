@@ -1,4 +1,5 @@
-#Read The Corresponding blog post below-
+# Read The Corresponding blog post below-
+
 https://soumyadip1995.blogspot.com/2018/12/introduction-to-boltzmann-machinesand.html
 
 # How to Use
