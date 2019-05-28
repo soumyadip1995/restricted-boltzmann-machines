@@ -1,8 +1,6 @@
-## Read The Corresponding blog post below-
+### Read The Corresponding blog post [here](https://soumyadip1995.blogspot.com/2018/12/introduction-to-boltzmann-machinesand.html)
 
-https://soumyadip1995.blogspot.com/2018/12/introduction-to-boltzmann-machinesand.html
-
-# How to Use
+## How to Use
 
 First, initialize an RBM with the desired number of visible and hidden units.
 
@@ -40,13 +38,8 @@ More technically, a Restricted Boltzmann Machine is a **stochastic neural networ
 
 Furthermore, each visible unit is connected to all the hidden units (this connection is undirected, so each hidden unit is also connected to all the visible units), and the bias unit is connected to all the visible units and all the hidden units. To make learning easier, we restrict the network so that no visible unit is connected to any other visible unit and no hidden unit is connected to any other hidden unit.
 
-For example, suppose we have a set of six movies (Harry Potter, Avatar, LOTR 3, Gladiator, Titanic, and Glitter) and we ask users to tell us which ones they want to watch. If we want to learn two latent units underlying movie preferences -- for example, two natural groups in our set of six movies appear to be SF/fantasy (containing Harry Potter, Avatar, and LOTR 3) and Oscar winners (containing LOTR 3, Gladiator, and Titanic), so we might hope that our latent units will correspond to these categories -- then our RBM would look like the following:
 
-[![RBM Example](http://dl.dropbox.com/u/10506/blog/rbms/rbm-example.png)](http://dl.dropbox.com/u/10506/blog/rbms/rbm-example.png)
-
-(Note the resemblance to a factor analysis graphical model.)
-
-# State Activation
+## State Activation
 
 Restricted Boltzmann Machines, and neural networks in general, work by updating the states of some neurons given the states of others, so let's talk about how the states of individual units change. Assuming we know the connection weights in our RBM (we'll explain how to learn these below), to update the state of unit $i$:
 
@@ -111,7 +104,7 @@ What happens if we give the RBM a new user, George, who has (Harry Potter = 0, A
 
 What happens if we activate only the SF/fantasy unit, and run the RBM a bunch of different times? In my trials, it turned on Harry Potter, Avatar, and LOTR 3 three times; it turned on Avatar and LOTR 3, but not Harry Potter, once; and it turned on Harry Potter and LOTR 3, but not Avatar, twice. Note that, based on our training examples, these generated preferences do indeed match what we might expect real SF/fantasy fans want to watch.
 
-# Modifications
+## Modifications
 
 I tried to keep the connection-learning algorithm I described above pretty simple, so here are some modifications that often appear in practice:
 
@@ -121,7 +114,7 @@ I tried to keep the connection-learning algorithm I described above pretty simpl
 * When updating edge weights, we could use a momentum factor: we would add to each edge a weighted sum of the current step as described above (i.e., $L * (Positive(e_{ij}) - Negative(e_{ij})$) and the step previously taken.
 * Instead of using only one training example in each epoch, we could use *batches* of examples in each epoch, and only update the network's weights after passing through all the examples in the batch. This can speed up the learning by taking advantage of fast matrix-multiplication algorithms.
 
-# rbmcmd
+## rbmcmd
 
 There is command-line tool to train and run RBM.
 
